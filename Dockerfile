@@ -12,12 +12,12 @@ WORKDIR $HOME
 #RUN bash $INST_SCRIPTS/ansible/install_ansible.sh  && rm -rf $INST_SCRIPTS/ansible/
 
 # Install Google Chrome
-#COPY ./src/ubuntu/install/chrome $INST_SCRIPTS/chrome/
-#RUN bash $INST_SCRIPTS/chrome/install_chrome.sh  && rm -rf $INST_SCRIPTS/chrome/
+COPY ./src/ubuntu/install/chrome $INST_SCRIPTS/chrome/
+RUN bash $INST_SCRIPTS/chrome/install_chrome.sh  && rm -rf $INST_SCRIPTS/chrome/
 
 # Install Chromium
-COPY ./src/ubuntu/install/chromium $INST_SCRIPTS/chromium/
-RUN if [ "$(uname -m)" = "aarch64" ]; then bash $INST_SCRIPTS/chromium/install_chromium.sh; fi && rm -rf $INST_SCRIPTS/>
+#COPY ./src/ubuntu/install/chromium $INST_SCRIPTS/chromium/
+#RUN if [ "$(uname -m)" = "aarch64" ]; then bash $INST_SCRIPTS/chromium/install_chromium.sh; fi && rm -rf $INST_SCRIPTS/>
 # Install Firefox
 #COPY ./src/ubuntu/install/firefox/ $INST_SCRIPTS/firefox/
 #COPY ./src/ubuntu/install/firefox/firefox.desktop $HOME/Desktop/
